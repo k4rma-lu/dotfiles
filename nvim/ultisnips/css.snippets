@@ -1,0 +1,130 @@
+snippet cc "comentario lineal" A
+/* $1 */
+endsnippet
+snippet cC "comentario multilineal" A
+/*
+$1
+*/
+endsnippet
+# ----------------------------------------- color
+snippet lr "color fg" A
+color: $1;
+endsnippet
+# ----------------------------------------- centrar
+snippet fc "centrear fuente" A
+text-align: $1;
+endsnippet
+# ----------------------------------------- fuentes
+snippet ff "familia de fuentes" A
+font-family: $1;
+endsnippet
+snippet fs "tamano de fuente" A
+font-size: $1;
+endsnippet
+# ----------------------------------------- opacidad
+snippet pc "opacidad" A
+opacity: ${1:0.0-1.0};
+endsnippet
+# ----------------------------------------- imagen
+snippet bg "color bg" A
+background: $1;
+endsnippet
+snippet bm "imagen de fondo" A
+background-image: url("${1:enlace a la imagen}");
+endsnippet
+# ----------------------------------------- borde
+snippet br "color de borde" A
+border: $1px solid ${2:color};
+endsnippet
+snippet bc "borde radio" A
+border-radius: $1;
+endsnippet
+# ----------------------------------------- margen
+snippet mr "margen a la izquierda" A
+margin: $1;
+endsnippet
+snippet nl "en linea"
+display: inline-block; 
+endsnippet
+snippet dc "decoracion de texto" A
+text-decoration: none; 
+endsnippet
+snippet vs "alinear a la derecha"
+vertical-align: top; 
+endsnippet
+snippet pd "pading" A
+padding: $1;
+endsnippet
+# ----------------------------------------- flotante
+snippet ft "flotante" A
+float: left;
+endsnippet
+snippet fT "cortar flotante - right | left" A
+clear: $1;
+endsnippet
+# ----------------------------------------- altura anchura
+snippet lt  "alto" A
+height: $1;
+endsnippet
+snippet mlt "alto minimo" A
+min-height: $1;
+endsnippet
+snippet Mlt "alto maximo" A
+max-height: $1;
+endsnippet
+snippet lg  "largo" A
+width: $1;
+endsnippet
+snippet mlg "largo minimo" A
+min-width: $1;
+endsnippet
+snippet Mlg "largo minimo" A
+max-width: $1;
+endsnippet
+# ----------------------------------------- estilo de letras
+snippet lnone "estilo de lista" A
+list-style: none;
+endsnippet
+# ----------------------------------------- plantillas
+snippet init "comentario lineal" A
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: $1;
+	font-family: 'Roboto', sans-serif;
+}
+.container {
+	width: 1200px;
+	height: 1000px;
+	margin: auto;
+}
+$1
+endsnippet
+snippet ,t "comentario lineal" A
+$1 {
+	width: $2;
+	height: $3;
+}
+endsnippet
+snippet ,n "comentario lineal" A
+$1 {
+	width: $2;
+	height: $3;
+	background: $4;
+}
+endsnippet
+
+
+
+
+
+snippet .. "comentario lineal" A
+.$1 {
+	display: grid;
+	grid-template-columns: $2fr $3;
+	grid-template-rows: $4px;
+	grid-gap: $5px;
+}
+endsnippet

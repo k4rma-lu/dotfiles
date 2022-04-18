@@ -1,0 +1,23 @@
+color: white;  -> cambia el color como el fg
+
+text-align: center;  -> centra el texto
+
+font-family: verdana;  -> la familia de fuentes que se usara
+font-size: 20px;  -> cambia el size de la fuente
+
+margin-left: 20px;  -> el margen o borde
+
+/* orden de abreviacion
+color image repeat attachment position*/
+background-color: lightblue;  -> cambia el color
+background-image: url("paper.gif");  -> bg de tipo imagen
+background-repeat: repeat-x;  -> repetir solo en x
+background-repeat: repeat-y;  -> repetir solo en y
+background-repeat: no-repeat;  -> para que la imagen no se repito
+background-position: right top;  -> pocisiona la imagen
+background-attachment: fixed;  -> el fondo no se mueve al scrolear
+background-attachment: scroll; -> la imagen se scrolea
+
+border:2px solid Tomato; -> borde de size tipo y color
+
+opacity: 0.3;  -> opacidad de un objeto

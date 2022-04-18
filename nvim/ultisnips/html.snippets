@@ -1,0 +1,202 @@
+# ----------------------------------------- head
+snippet tl "titulo" A
+<title>$1</title>
+endsnippet
+snippet tf "utf-8" A
+<meta charset="utf-8">
+endsnippet
+snippet mt "meta" A
+<meta name="$1" content="$2">
+endsnippet
+snippet cn "link" A
+<link rel="icon" href="$1.ico">
+endsnippet
+# ----------------------------------------- adicionales
+snippet ct "comentario lineal" A
+<!-- $1 -->
+endsnippet
+snippet bk "break" A
+<br>
+endsnippet
+snippet ln "linea horizontal" A
+<hr>
+endsnippet
+snippet dv "divisiones" A
+<div class="$1">
+	$2
+</div>
+endsnippet
+# ----------------------------------------- atributos
+snippet ss "añadir clase" A
+class="$1"
+endsnippet
+snippet dd "identificador" A
+id="$1"
+endsnippet
+# ----------------------------------------- formulario
+snippet fr "formulario" A
+<form method="" action="">
+	<input type="$1" name="" required="">$0
+</form>
+endsnippet
+snippet np "input" A
+<input type="$1" name="" required="" placeholder="">
+endsnippet
+snippet bT "boton" A
+<input type="button" value="$1">
+endsnippet
+snippet bt "boton" A
+<input type="submit">
+endsnippet
+# ----------------------------------------- encabezados
+snippet hh "encabezado nivel 1" A
+<h1>$1</h1>
+endsnippet
+snippet hd "encabezado nivel 2" A
+<h2>$1</h2>
+endsnippet
+snippet hs "encabezado nivel 3" A
+<h3>$1</h3>
+endsnippet
+snippet hf "encabezado nivel 4" A
+<h4>$1</h4>
+endsnippet
+snippet hc "encabezado nivel 5" A
+<h5>$1</h5>
+endsnippet
+# ----------------------------------------- parrafo
+snippet pf "parrafo" A
+<p>$1</p>
+endsnippet
+snippet bd "stronk" A
+<strong>$1</strong>
+endsnippet
+snippet italicat "italica" A
+<i>$1</i>
+endsnippet
+snippet striket "strike" A
+<strike>$1</strike>
+endsnippet
+snippet smallt "small" A
+<small>$1</small>
+endsnippet
+snippet sp "span" A
+<span>$1</span>
+endsnippet
+# ----------------------------------------- enlace
+snippet rj "ruta en la misma pestana" A
+<a href="$2">$1</a>
+endsnippet
+snippet rk "ruta en nueva pestana" A
+<a href="$2" target="_BLANK">$1</a>
+endsnippet
+snippet cj "css" A
+<link href="$1.css" rel="stylesheet" type="text/css">$0
+endsnippet
+# ----------------------------------------- listas
+snippet ds "listas desordenadas" A
+<ul class="$1">
+	$2
+</ul>
+endsnippet
+snippet rd "listas ordenadas" A
+<ol>
+	$1
+</ol>
+endsnippet
+snippet ls "listas" A
+<li>$1</li>
+endsnippet
+snippet lS "listas" A
+<li><a href="#">$1</a></li>
+endsnippet
+# ----------------------------------------- multimedia
+snippet mg "imagen" A
+<img src="$1" alt="$2" title="$3">
+endsnippet
+snippet vd "video" A
+<video src="$1" controls=""></video>
+endsnippet
+snippet dt "video" A
+<audio src="$1" controls=""></audio>
+endsnippet
+# ----------------------------------------- estructura
+snippet headert "header" A
+<header>
+	$1
+</header>
+endsnippet
+snippet nv "nav" A
+<nav class="$1">
+	<ul>
+		<li><a href="#">$2</a></li>
+	</ul>
+</nav>
+endsnippet
+snippet rtc "articulo" A
+<article>
+	$1
+</article>
+endsnippet
+snippet st "section" A
+<section>
+	$1
+</section>
+endsnippet
+snippet asidet "aside" A
+<aside>
+	$1
+</aside>
+endsnippet
+snippet ft "footer" A
+<footer>
+	$1
+</footer>
+endsnippet
+snippet tb "tabla" A
+<table>
+	<tr>
+		<td>$1</td>$0
+	</tr>
+</table>
+endsnippet
+snippet td "td" A
+<td>$1</td>
+endsnippet
+snippet trt "comentario lineal" A
+<tr>
+	<td>$1</td>$0
+</tr>
+endsnippet
+# ========================================= plantillas
+snippet init "plantilla basica" A
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="https://fonts.googleapis.com/css?family=Roboto.css" rel="stylesheet" type="text/css">
+		<link href="main.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="container">
+			$1
+		</div>
+	</body>
+</html> 
+endsnippet
+
+
+snippet .container "comentario lineal" A
+<div class
+endsnippet
+
+snippet wow "comentario lineal" b
+esto es una prueba
+endsnippet
+
+snippet wow "prueba para borrar" A
+esto es una prueba
+endsnippet
+

@@ -1,0 +1,70 @@
+snippet tt "columna" A
+--- | 
+endsnippet
+snippet rj "ruta interna" A
+[[$1]]
+endsnippet
+snippet rk "ruta externa" A
+[$1]($2)
+endsnippet
+snippet lc "enlaces a paginas" A
+<$1>
+endsnippet
+snippet rr "referencia" A
+[${1:texto}][${2:numero}]${3:[$0$2]: <${4:pagina}> (${5:descripcion})}
+endsnippet
+# --------------------------- encabezados
+snippet hh "encabezado nivel uno" A
+# $1
+endsnippet
+snippet hd "encabezado nivel dos" A
+## $1
+endsnippet
+snippet ht "encabezado nivel tres" A
+### $1
+endsnippet
+snippet hf "encabezado nivel cuatro" A
+#### $1
+endsnippet
+snippet hc "encabezado nivel cinco" A
+##### $1
+endsnippet
+# --------------------------- parrafo
+snippet bd "negrita" A
+**$1**
+endsnippet
+snippet cv "cursiva" A
+*$1*
+endsnippet
+snippet bm "negrita cursiva" A
+***$1***
+endsnippet
+snippet tc "tachado" A
+~~$1~~
+endsnippet
+snippet hl "resaltado" A
+==$3==
+endsnippet
+# --------------------------- parrafo other
+snippet hr "linea horizontal" A
+---
+endsnippet
+
+snippet mg "imagen" A
+![$1]($2)
+endsnippet
+snippet mG "imagen con enlace" A
+[![${1:nombre de la imagen}](${2:enlace de la imagen})](${3:enlace al que quieres ir})
+endsnippet
+
+snippet ct "citas" A
+> $1
+endsnippet
+
+
+snippet mp "mapeo" A
+$1 \`$2: \$1;\` $3
+endsnippet
+
+
+
