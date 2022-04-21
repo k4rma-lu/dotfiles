@@ -125,4 +125,4 @@ super + ctrl + {h,t,n,s}
 
 # Custom move/resize
 alt + super + {h,t,n,s}
-	/home/k4rma/Documentos/github/dotfiles/sistema/bspwm/scripts/bspwm_resize {west,south,north,east}
+	/home/k4rma/Documentos/Projects/Desktop/dotfiles/sistema/bspwm/scripts/bspwm_resize {west,south,north,east}
