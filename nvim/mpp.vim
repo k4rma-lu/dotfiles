@@ -29,7 +29,7 @@ nmap mps :UltiSnipsEdit<cr>
 nmap mpS :vs<cr>:UltiSnipsEdit<cr>
 " los archivos que pueden agregar son .snippets
 nmap mPs :UltiSnipsAddFiletypes 
-let g:UltiSnipsExpandTrigger="<C-t>"
+"let g:UltiSnipsExpandTrigger="<C-t>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "let g:UltiSnipsEditSplit="vertical"

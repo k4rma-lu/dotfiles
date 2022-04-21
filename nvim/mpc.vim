@@ -4,6 +4,7 @@ nmap mpc :e /home/k4rma/.config/nvim/mpc.vim<cr>
 nmap mpg :e /home/k4rma/.config/nvim/plug.vim<cr>
 nmap mpp :e /home/k4rma/.config/nvim/mpp.vim<cr>
 nmap mpz :e /home/k4rma/.zshrc<cr>
+nmap mpa  :e /home/k4rma/Documentos/nota.txt<cr>
 " -------------------------------- palabras reservadas
 imap ~n ñ
 " -------------------------------- config sistema
@@ -42,6 +43,7 @@ nmap <leader>l <c-w>l
 " -------------------------------- pestaña
 nmap ,n :tabnext<cr>
 nmap ,t :tabprevious<cr>
+nmap ,O :tabonly<cr>
 " -------------------------------- seleccion
 nmap mv BvE
 nmap mV ggVG

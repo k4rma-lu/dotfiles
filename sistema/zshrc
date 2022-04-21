@@ -33,6 +33,8 @@ alias lla='lsd -lha --group-dirs=first'
 alias lc='ls -1'
 alias lca='la -1'
 
+# mover
+alias mvl='mv $(ls | fzf -m) ~/Descargas/revisar'
 
 # preview
 alias cat='/bin/bat'
@@ -60,6 +62,8 @@ function vv(){
 function vl(){
 	v "$(fl)"
 }
+# ubicaciones
+alias a="v ~/Documentos/nota.txt"
 
 # server
 alias dbi='sudo /opt/lampp/lampp start'
@@ -82,9 +86,6 @@ plugins=(vi-mode)
 
 alias actualizar='sudo apt update; sudo apt-get update; sudo parrot-upgrade; sudo apt update'
 
-alias pmi='cd /home/k4rma/Documentos/Palacio\ Mental/Informatica/'
-
-alias obsidian='.git/ProgramasEjecutables/Obsidian-0.13.31.AppImage'
 alias cpll='g++ -o ejecutable'
 function cpp(){
     g++ -o ejecutable $1
@@ -92,22 +93,19 @@ function cpp(){
 function cpc(){
     gcc $1 -o ejecutable
 }
-alias d='cd "$(find -type d | fzf)"'
+
+alias d='cd; cd "$(find -type d | fzf)"'
 function fcd(){
 	cd "$(find -type d | fzf)"
 }
 function open(){
-	xdg-open "$(find -type f | fzf)"
+	xdg-open "$(cd; find -type f | fzf)"
 }
 alias sz='source ~/.zshrc'
 
-
+# sistema
 alias gp="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"
-function gpl(){
-    find -type f | fl | sed 's/^..//' | tr -d '\n' | xclip -selection c
-}
-alias cin="xclip -selection c"
-alias cout="xclip -selection clipboard -o"
+alias xp="xprop WM_CLASS"
 
 function bg(){
   rm ~/Imágenes/Wallpaper/w.jpg 2> /dev/null ;
@@ -122,10 +120,10 @@ function create(){
   clear;
   ls
 }
-# modo vi
+
 # modo vi en zsh
 #set -o vi
-
+# modo vi
 bindkey -v
 bindkey 'ii' vi-cmd-mode
 # bindkey -s "^v" "hola mundo"
