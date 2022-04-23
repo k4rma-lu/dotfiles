@@ -23,7 +23,17 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-## aliases
+## -------------------------------------------- aliases
+# aplicaciones
+function z(){ zathura $1 & }
+alias zz='cd; zathura $(find . -type f -iname "*.pdf" | fzf)'
+
+# sistema
+alias q='exit'
+alias t='tmux'
+alias brewinit='source ~/.profile'
+alias so='source'
+
 # listar
 alias l='lsd --group-dirs=first'
 alias ls='lsd --group-dirs=first'
@@ -32,19 +42,23 @@ alias ll='lsd -lh --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias lc='ls -1'
 alias lca='la -1'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
-# mover
-alias mvl='mv $(ls | fzf -m) ~/Descargas/revisar'
+# mover a revisar
+alias mvvl='mv $(ls | fzf -m) ~/Descargas/verify'
+function mvv(){ mv $1 ~/Descargas/verify }
 
-# preview
+# previsualizar
 alias cat='/bin/bat'
 alias catn='/bin/cat'
 alias catnl='/bin/bat --paging=never'
-function catl(){
-	cat "$(find -type f | fzf)"
-}
+alias catl='cat $(ls | fzf -m)'
 
-# remove
+# eliminar
 alias rml='rm -rf $(ls | fzf -m)'
 function rmk(){
 	scrub -p dod $1
@@ -53,73 +67,51 @@ function rmk(){
 
 # neovim
 alias v='/home/linuxbrew/.linuxbrew/bin/nvim'
-function V(){
-	v "$(find -type f | fzf)"
-}
-function vv(){
-	v "$(fzf)"
-}
-function vl(){
-	v "$(fl)"
-}
-# ubicaciones
+function V(){ v "$(find -type f | fzf)" }
+function vv(){ v "$(fzf)" }
+function vl(){ v "$(fl)" }
+# neovim por proyecto
+function vd(){ cd ~/Documentos/Projects/DeskApp; v "$(fl)" }
+function vm(){ cd ~/Documentos/Projects/Mobile; v "$(fl)" }
+function vs(){ cd ~/Documentos/Projects/Scripting; v "$(fl)" }
+function vt(){ cd ~/Documentos/Projects/Thirds; v "$(fl)" }
+function vw(){ cd ~/Documentos/Projects/Web; v "$(fl)" }
+# neovim auxiliar
 alias a="v ~/Documentos/nota.txt"
 
-# server
+# servidor xamp
 alias dbi='sudo /opt/lampp/lampp start'
 alias dbo='sudo /opt/lampp/lampp stop'
+alias dbv='sudo rm /opt/lampp/htdocs/dev 2> /dev/null ; sudo ln -s $(pwd) /opt/lampp/htdocs/dev;'
+# servidor live
 alias lsv='live-server --port=8000 --browser=google-chrome'
-alias server.='sudo rm /opt/lampp/htdocs/dev 2> /dev/null ; sudo ln -s $(pwd) /opt/lampp/htdocs/dev;'
 
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-alias q='exit'
-alias t='tmux'
-alias brewinit='source ~/.profile'
-alias so='source'
 
 plugins=(vi-mode)
 
-
-alias actualizar='sudo apt update; sudo apt-get update; sudo parrot-upgrade; sudo apt update'
-
-alias cpll='g++ -o ejecutable'
-function cpp(){
-    g++ -o ejecutable $1
-}
-function cpc(){
-    gcc $1 -o ejecutable
-}
-
+# ir a directorio
 alias d='cd; cd "$(find -type d | fzf)"'
-function fcd(){
-	cd "$(find -type d | fzf)"
-}
-function open(){
-	xdg-open "$(cd; find -type f | fzf)"
-}
+alias c='pushd'
+alias C='popd'
+
+# revisar
+function o(){ xdg-open "$(cd; find -type f | fzf)" }
 alias sz='source ~/.zshrc'
 
 # sistema
 alias gp="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"
 alias xp="xprop WM_CLASS"
+alias ,,='sudo apt update; sudo apt-get update; sudo parrot-upgrade; sudo apt update'
 
 function bg(){
   rm ~/Imágenes/Wallpaper/w.jpg 2> /dev/null ;
-  cp ~/Imágenes/Wallpaper/$1.jpg 2> /dev/null ~/Imágenes/Wallpaper/w.jpg ;
+  cd /home/k4rma/Imágenes/Wallpaper;
+  cp $(find . -type f -iname "*.jpg" | fzf)  ~/Imágenes/Wallpaper/w.jpg ;
+  #cp $(find . -type f -iname "*.jpg" | fzf) 2> /dev/null ~/Imágenes/Wallpaper/w.jpg ;
   bspc wm -r
 }
 
-function create(){
-  mkdir $1 ; cd $1;
-  cp ~/.nirvana/recursos/ReactNativePlantilla/*.* 2> /dev/null "$(pwd)";
-  ln -s ~/.nirvana/ReactNative/assets .; ln -s ~/.nirvana/ReactNative/node_modules .;
-  clear;
-  ls
-}
+alias zz='cd; zathura $(find . -type f -iname "*.pdf" | fzf)'
 
 # modo vi en zsh
 #set -o vi

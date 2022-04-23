@@ -3,9 +3,6 @@ so /home/k4rma/.config/nvim/mpc.vim
 so /home/k4rma/.config/nvim/mpp.vim
 
 " -------------------------------- configuracion
-set fillchars =" "
-
-"o.fillchars = { eob = " " }
 set nu
 set relativenumber
 set confirm
@@ -28,7 +25,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set termguicolors
-set scrolloff=2
+set scrolloff=5
 set cmdheight=1
 set updatetime=50
 set shortmess+=c
@@ -36,8 +33,8 @@ set shortmess+=c
 "set cursorline
 set foldcolumn=0
 set bg=dark
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
+set ignorecase
+set smartcase
 set shell=zsh
 
 set encoding=utf-8

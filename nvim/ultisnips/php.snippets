@@ -28,7 +28,7 @@ define("${1:CONSTANTE}", ${2:0});
 endsnippet
 # abstraer
 snippet vV "variable de entrada numerica" A
-$${1:nombre_variable} = (${3:int})$_POST["${2:id}"];
+$${1:nombre_variable} = ${2:(${3:int})}$_POST["txt$1"];
 endsnippet
 # ----------------------------------------- condicional
 snippet fF "si" A
@@ -115,7 +115,7 @@ snippet ifs "condicional ingreso de datos" A
 if(isset($_POST["${1:btnCalcular}"])) {
 	// Entrada
 	print_r($_POST);
-	$${2:var} = (${4:int})$_POST["${3:txtn1}"];$5
+	$${2:nombre_variable} = ${3:(${4:int})}$_POST["txt$2"];
 	// proceso
 	$6
 }
