@@ -14,7 +14,7 @@ endsnippet
 snippet md "modulo" A
 $1 % $2
 endsnippet
-snippet xp "exponente" A
+snippet xp "exponente potencia" A
 pow(${1:base},${2:exponente})
 endsnippet
 # ----------------------------------------- variables
@@ -28,7 +28,7 @@ define("${1:CONSTANTE}", ${2:0});
 endsnippet
 # abstraer
 snippet vV "variable de entrada numerica" A
-$${1:nombre_variable} = ${2:(${3:int})}$_POST["txt$1"];
+$${1:nombre_variable} = ${2:(${3:int})}$_POST["$1"];
 endsnippet
 # ----------------------------------------- condicional
 snippet fF "si" A
@@ -106,7 +106,7 @@ for ($${1:i}=${2:0} ; $$1${3:<=}${4:10} ; $$1${5:=$$1+${6:1}}){
 }
 endsnippet
 # ----------------------------------------- plantillas
-snippet init "inicial" A
+snippet #!init "inicial" A
 <?php
 $1
 ?>
@@ -115,7 +115,7 @@ snippet ifs "condicional ingreso de datos" A
 if(isset($_POST["${1:btnCalcular}"])) {
 	// Entrada
 	print_r($_POST);
-	$${2:nombre_variable} = ${3:(${4:int})}$_POST["txt$2"];
+	$${2:nombre_variable} = ${3:(${4:int})}$_POST["$2"];
 	// proceso
 	$6
 }
@@ -131,3 +131,97 @@ snippet optiont "comentario lineal" A
 <option value="$1">$2</option>
 endsnippet
 
+
+
+
+
+# ----------------------------------------- funciones para proyectos
+snippet addlist "añadir lista" A
+							<li class="nav-item">
+								<a href="$1.php" class="nav-link">
+									<i class="far fa-circle nav-icon"></i>
+									<p>PROGRAMA ${2:numero}</p>
+								</a>
+							</li>
+endsnippet
+snippet addtext "comentario lineal" A
+  		<div>
+  			<label for="${2:variable}">${1:texto para el label}</label>
+  			<input type="text" name="$2" id="$2" placeholder="${3:placeholder}" class="form-control">
+  		</div>
+endsnippet
+snippet addnum "añadir numero" A
+  		<div>
+  			<label for="${2:variable}">${1:texto para el label}</label>
+  			<input type="number" name="$2" id="$2" class="form-control">
+  		</div>
+endsnippet
+snippet addswitch "añadir opciones" A
+  		<div>
+  			<label for="${2:variable}">${1:texto para el label}</label>
+  			<select name="$2" id="$2" class="form-control">
+  				<option value="$3">${3:opcion visible}</option>
+					$0
+  			</select>
+  		</div>
+endsnippet
+snippet addcase "añadir opcion" A
+  				<option value="$1">${1:opcion visible}</option>$0
+endsnippet
+snippet addbutton "añadir botan" A
+			<br>
+  		<div>
+  			<input  name="btnCalcular"  type="submit" id="btnCalcular" value="Calcular" class="btn btn-outline-success" />
+  		</div>
+endsnippet
+snippet addexit "añadir salida" A
+  	<div>
+  			<?php
+					$1
+  			?>
+  	</div>
+endsnippet
+snippet ch "impresion de texto con echo" A
+echo "<strong>$1</strong><br/>";
+endsnippet
+
+# ----------------------------------------- programa
+snippet #!programa "comentario lineal" A
+<?php
+    include('encabezado.php');
+?>
+      <!-- SidebarSearch Form -->
+<!-- INICIO DEL MENÚ QUE CONTIENE EL LISTADO DE LOS PROGRAMAS DESARROLLADOS -->
+<?php
+    include('menu.php');
+?>
+
+
+    <!-- logica del programa -->
+<?php
+  //DECLARACIÓN DE CONSTANTES
+
+	//DECLARACIÓN DE LAS VARIABLES
+
+	//PROCEDIMIENTO
+?>
+
+    <!-- apariencia del programa -->
+    <form method="POST" action="programa$1.php">
+$2
+			<br>
+  		<div>
+  			<input  name="btnCalcular"  type="submit" id="btnCalcular" value="Calcular" class="btn btn-outline-success" />
+  		</div>
+  	</form>
+    <!-- salida del programa -->
+  	<div>
+  			<?php
+  			?>
+  	</div>
+
+<!-- FIN DEL CÓDIGO FUENTE -->
+<?php
+    include('footer.php');
+?>
+endsnippet

@@ -29,6 +29,7 @@ function z(){ zathura $1 & }
 alias zz='cd; zathura $(find . -type f -iname "*.pdf" | fzf)'
 
 # sistema
+alias qq='sudo shutdown now'
 alias q='exit'
 alias t='tmux'
 alias brewinit='source ~/.profile'
@@ -103,10 +104,16 @@ alias gp="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"
 alias xp="xprop WM_CLASS"
 alias ,,='sudo apt update; sudo apt-get update; sudo parrot-upgrade; sudo apt update'
 
-function bg(){
+function bf(){
   rm ~/Imágenes/Wallpaper/w.jpg 2> /dev/null ;
   cd /home/k4rma/Imágenes/Wallpaper;
   cp $(find . -type f -iname "*.jpg" | fzf)  ~/Imágenes/Wallpaper/w.jpg ;
+  #cp $(find . -type f -iname "*.jpg" | fzf) 2> /dev/null ~/Imágenes/Wallpaper/w.jpg ;
+  bspc wm -r
+}
+function bg(){
+  rm ~/Imágenes/Wallpaper/w.jpg 2> /dev/null ;
+  cp $(find /home/k4rma/Imágenes/Wallpaper -type f -iname "*.jpg" | fzf)  ~/Imágenes/Wallpaper/w.jpg ;
   #cp $(find . -type f -iname "*.jpg" | fzf) 2> /dev/null ~/Imágenes/Wallpaper/w.jpg ;
   bspc wm -r
 }
