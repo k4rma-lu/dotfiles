@@ -4,6 +4,7 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
+set-option -ga terminal-overrides ",xterm-256color:Tc"
 
 # -- navigation ----------------------------------------------------------------
 
@@ -66,7 +67,7 @@ tmux_conf_theme_colour_15="#080808"   # dark gray
 tmux_conf_theme_colour_16="#d70000"   # red
 tmux_conf_theme_colour_17="#e4e4e4"   # white
 
-tmux_conf_theme_colour_0="#323232"   # barra
+tmux_conf_theme_colour_0="#121919"   # barra
 #tmux_conf_theme_colour_0="#A0A8B7"   # terceario
 #tmux_conf_theme_colour_0="#282C34"   # secundario
 

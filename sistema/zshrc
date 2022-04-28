@@ -24,7 +24,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 
 ## -------------------------------------------- aliases
-# aplicaciones
+# abrir aplicacion
 function z(){ zathura $1 & }
 alias zz='cd; zathura $(find . -type f -iname "*.pdf" | fzf)'
 
@@ -34,6 +34,15 @@ alias q='exit'
 alias t='tmux'
 alias brewinit='source ~/.profile'
 alias so='source'
+
+# personalizar paneles
+function p(){
+  sed -i "s/$(more /home/k4rma/.config/bspwm/bspwmrc | grep "window_gap")/bspc config window_gap           $1/g" /home/k4rma/.config/bspwm/bspwmrc; bspc wm -r;
+  sed -i "s/$(more /home/k4rma/.config/picom/picom.conf | grep "corner-radius =")/corner-radius = $2;/g" /home/k4rma/.config/picom/picom.conf
+}
+function b(){
+  sed -i "s/$(more /home/k4rma/.config/bspwm/bspwmrc | grep "border_width")/bspc config border_width         $1/g" /home/k4rma/.config/bspwm/bspwmrc; bspc wm -r
+}
 
 # listar
 alias l='lsd --group-dirs=first'
@@ -99,22 +108,15 @@ alias C='popd'
 function o(){ xdg-open "$(cd; find -type f | fzf)" }
 alias sz='source ~/.zshrc'
 
-# sistema
+# portapapeles
 alias gp="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"
 alias xp="xprop WM_CLASS"
 alias ,,='sudo apt update; sudo apt-get update; sudo parrot-upgrade; sudo apt update'
 
-function bf(){
-  rm ~/Imágenes/Wallpaper/w.jpg 2> /dev/null ;
-  cd /home/k4rma/Imágenes/Wallpaper;
-  cp $(find . -type f -iname "*.jpg" | fzf)  ~/Imágenes/Wallpaper/w.jpg ;
-  #cp $(find . -type f -iname "*.jpg" | fzf) 2> /dev/null ~/Imágenes/Wallpaper/w.jpg ;
-  bspc wm -r
-}
+# fondo
 function bg(){
   rm ~/Imágenes/Wallpaper/w.jpg 2> /dev/null ;
   cp $(find /home/k4rma/Imágenes/Wallpaper -type f -iname "*.jpg" | fzf)  ~/Imágenes/Wallpaper/w.jpg ;
-  #cp $(find . -type f -iname "*.jpg" | fzf) 2> /dev/null ~/Imágenes/Wallpaper/w.jpg ;
   bspc wm -r
 }
 
@@ -133,10 +135,8 @@ function treec(){
 	tree $2 $1 | cat
 }
 
-# Functions
-function mkt(){
-	mkdir {nmap,content,exploits,scripts}
-}
+# crear carpetas
+alias mkt='mkdir nmap content exploits scripts'
 
 # Extract nmap information
 function extractPorts(){
@@ -176,7 +176,7 @@ function fl(){
 	                  cat {}) 2> /dev/null | head -500'
 
 	else
-	        fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
+        fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
 	                         echo {} is a binary file ||
 	                         (bat --style=numbers --color=always {} ||
 	                          highlight -O ansi -l {} ||

@@ -4,7 +4,8 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config window_gap           0
+bspc config border_width         2
+bspc config window_gap           1
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -19,9 +20,4 @@ bspc rule -a Screenkey manage=off
 feh --bg-fill /home/k4rma/Imágenes/Wallpaper/w.jpg
 bspc config focus_follows_pointer true
 picom --experimental-backends &
-bspc config border_width         0
-
-
-#bspc config normal_border_color '#323232'
-#bspc config active_border_color '#000000'
-#bspc config focus_border_color '#fff000'
+bspc config border_width 0
