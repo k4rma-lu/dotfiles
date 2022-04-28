@@ -6,17 +6,16 @@ snippet cC "comentario multilineal" A
 $1
 """
 endsnippet
-
+snippet vv "asignar variable" A
+${1:variable} = ${2:"${3:valor}"}
+endsnippet
 snippet pt "impresion" A
 print("${1:mensaje}")$0
 endsnippet
-snippet rg "for range" A
-for i in range(${1:0}):
-	${2:None}
-endsnippet
 
-snippet vn "valor" A
-${1:variable} = ${2:valor}
+snippet fr "for range" A
+for i in range(${1:0}):
+	${2:pass}
 endsnippet
 
 # ----------------------------------------- header
@@ -48,14 +47,4 @@ endsnippet
 snippet cs "definir clase" A
 class $1($2):
 	${3:pass}
-endsnippet
-
-snippet plantilla1 "comentario lineal" b
-primera plantilla
-endsnippet
-snippet plantilla2 "comentario lineal" b
-segunda plantilla
-endsnippet
-snippet plantilla3 "comentario lineal" b
-tercera plantilla plantilla
 endsnippet

@@ -1,6 +1,8 @@
 so /home/k4rma/.config/nvim/plug.vim
 so /home/k4rma/.config/nvim/mpc.vim
 so /home/k4rma/.config/nvim/mpp.vim
+so /home/k4rma/.config/nvim/NeoSolarized.vim
+so /home/k4rma/.config/nvim/tabline.rc.vim
 
 " -------------------------------- configuracion
 set nu
@@ -25,12 +27,13 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set termguicolors
-set scrolloff=5
+set scrolloff=3
 set cmdheight=1
 set updatetime=50
 set shortmess+=c
 "set colorcolumn=80
-"set cursorline
+"set showmode
+set cursorline
 set foldcolumn=0
 set bg=dark
 set ignorecase
@@ -52,7 +55,8 @@ set completeopt=menu,menuone,noselect
 let g:onedark_config = {
     \ 'style': 'warmer',
 \}
-colorscheme onedark
+"colorscheme onedark
+"so /home/k4rma/.config/nvim/monokai.vim
 
 syntax enable
 set termguicolors
