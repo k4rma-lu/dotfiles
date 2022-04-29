@@ -3,8 +3,12 @@
 "nnoremap <C-n> :NERDTree<CR>
 "nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <leader>no :NERDTreeFind<CR>
+let g:NERDTreeDirArrowExpandable = '  '
+let g:NERDTreeDirArrowCollapsible = '  '
 let g:NERDTreeWinPos = "right"
 let NERDTreeQuitOnOpen = 1
+let g:NERDTreeShowLineNumbers = 0       " Si se muestran los números de línea
+let g:NERDTreeHidden = 1 " archivos ocultos, 0 no mostrar, 1 mostrar
 " -------------------------------- easymotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap t <Plug>(easymotion-overwin-f2)

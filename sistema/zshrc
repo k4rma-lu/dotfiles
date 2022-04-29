@@ -185,3 +185,24 @@ function fl(){
 	                          cat {}) 2> /dev/null | head -500'
 	fi
 }
+
+
+# notificaciones de sistema
+function ns(){
+    notify-send $1
+}
+
+function pswd(){
+    grep $(awk -F "/" '{ print $1}' /home/k4rma/Documentos/Auxiliar/.noTocar.txt | rofi -dmenu) /home/k4rma/Documentos/Auxiliar/.noTocar.txt | cut -f 2 -d "/" | tr -d '\n'| xclip -selection c
+}
+
+
+alias addc='pwd >> ~/Documentos/Auxiliar/posiciones.txt'
+
+alias pls='awk -F "/" '{ print $NF}' /home/k4rma/Documentos/Auxiliar/posiciones.txt | rofi -dmenu -i'
+
+function pmenu(){
+    awk -F "/" '{ print $NF}' /home/k4rma/Documentos/Auxiliar/posiciones.txt | rofi -dmenu -i
+}
+
+

@@ -9,9 +9,10 @@ super + Return
 # program launcher
 super + e
 	rofi -show run
+
 # biblioteca
 super + b
-    cd Documentos/Biblioteca ; zathura $(find . -type f -iname "*.pdf" | rofi -dmenu)
+    cd Documentos/Biblioteca ; zathura $(find . -type f -iname "*.pdf" | rofi -dmenu -i)
 
 # make sxhkd reload its configuration files:
 super + Escape

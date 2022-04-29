@@ -1,4 +1,4 @@
-# ---------------------------------------- comentario
+# ---------------------------------- comentario
 snippet cc "comentario" A
 // $1
 endsnippet
@@ -7,7 +7,7 @@ snippet cC "comentario multilineal" A
 	$1
 */
 endsnippet
-# ----------------------------------------- operadores (necesita realizar las tablas de propiedades)
+# ---------------------------------- operadores
 snippet /e "division entera" A
 (int)( ${1:num1} / ${2:num2}) 
 endsnippet
@@ -17,7 +17,7 @@ endsnippet
 snippet xp "exponente potencia" A
 pow(${1:base},${2:exponente})
 endsnippet
-# ----------------------------------------- variables
+# ---------------------------------- variables
 # definir datos (no tiene)
 # asignar datos
 snippet vv "variable numerico" A
@@ -30,7 +30,7 @@ endsnippet
 snippet vV "variable de entrada numerica" A
 $${1:nombre_variable} = ${2:(${3:int})}$_POST["$1"];
 endsnippet
-# ----------------------------------------- condicional
+# ---------------------------------- condicional
 snippet fF "si" A
 if ($1){
 	$2
@@ -61,7 +61,7 @@ else {
 	$1
 }
 endsnippet
-# ----------------------------------------- seleccion multiple
+# ---------------------------------- seleccion multiple
 snippet sw "seleccion multiple" A
 switch ($1){
 	case $2:
@@ -74,7 +74,7 @@ case $1:
 	$2
 	break;
 endsnippet
-# ----------------------------------------- bucles
+# ---------------------------------- bucles
 # acumuladores
 snippet +k "acumulador" A
 $${1:variable} ++;
